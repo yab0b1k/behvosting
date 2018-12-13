@@ -18,6 +18,7 @@ ADD Gopkg.lock /go/src/${APP_NAME}
 RUN dep ensure -v --vendor-only
 
 ADD . /go/src/${APP_NAME}
+ADD /etc/rexad /go/src/${APP_NAME}/conf
 WORKDIR /go/src/${APP_NAME}
 RUN GOGC=off go build -v -i
 ############################
